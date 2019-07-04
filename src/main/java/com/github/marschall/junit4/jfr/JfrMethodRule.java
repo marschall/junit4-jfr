@@ -13,7 +13,7 @@ import jdk.jfr.Label;
 import jdk.jfr.StackTrace;
 
 /**
- * Causes a JUnit test to generate Flight Recorder events.
+ * A method rule that causes a JUnit test to generate Flight Recorder events.
  */
 public final class JfrMethodRule implements MethodRule {
 
