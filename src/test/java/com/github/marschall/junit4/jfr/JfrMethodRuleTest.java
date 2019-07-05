@@ -12,7 +12,7 @@ import jdk.jfr.Event;
 import jdk.jfr.Label;
 
 public class JfrMethodRuleTest {
-  
+
   @Rule
   public JfrMethodRule jfr = new JfrMethodRule();
 
@@ -59,7 +59,7 @@ public class JfrMethodRuleTest {
     private String name;
 
     String getName() {
-      return name;
+      return this.name;
     }
 
     void setName(String name) {

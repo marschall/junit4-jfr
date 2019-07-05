@@ -20,7 +20,7 @@ public final class JfrMethodRule implements MethodRule {
   @Override
   public Statement apply(Statement base, FrameworkMethod method, Object target) {
     return new Statement() {
-      
+
       @Override
       public void evaluate() throws Throwable {
         TestExecutionEvent event = new TestExecutionEvent();
@@ -33,11 +33,11 @@ public final class JfrMethodRule implements MethodRule {
           event.end();
           event.commit();
         }
-        
+
       }
     };
   }
-  
+
   private static String getMethodName(Method method) {
     boolean isVoid = method.getReturnType() == Void.TYPE;
     boolean hasParameters = method.getParameterCount() == 0;
@@ -63,7 +63,7 @@ public final class JfrMethodRule implements MethodRule {
     }
     return buffer.toString();
   }
-  
+
 
 
   @Category("JUnit")
@@ -75,7 +75,7 @@ public final class JfrMethodRule implements MethodRule {
     @Label("Test Method")
     @Description("The method associated with the test, if available")
     private String testMethod;
-    
+
     @Label("Test Class")
     @Description("The class associated with the test, if available")
     private Class<?> testClass;
@@ -89,7 +89,7 @@ public final class JfrMethodRule implements MethodRule {
     }
 
     Class<?> getTestClass() {
-      return testClass;
+      return this.testClass;
     }
 
     void setTestClass(Class<?> testClass) {
